@@ -1,0 +1,3 @@
+# ignoring notebook checkpoints
+
+dummy/.ipynb_checkpoints/
