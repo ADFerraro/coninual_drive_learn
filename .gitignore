@@ -1,3 +1,7 @@
 # ignoring notebook checkpoints
 
 dummy/.ipynb_checkpoints/
+dummy/.virtual_documents/
+
+# files to be ignored
+.DS_Store
