@@ -25,5 +25,5 @@ class PolicyNet(nn.Module):
 
 policyNet = PolicyNet()
 
-print(policyNet)
 torch.save(policyNet, PATH)
+print("not trained model generated.")
