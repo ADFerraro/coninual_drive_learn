@@ -3,6 +3,7 @@ import time
 import torch
 import torch.nn as nn
 
+torch.manual_seed(42)
 img = torch.load('./input.pt', weights_only=True)
 lab = torch.load('./label.pt', weights_only=True)
 last_mod = os.stat('input.pt').st_mtime

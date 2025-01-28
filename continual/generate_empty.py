@@ -3,6 +3,8 @@ import torch.nn as nn
 
 PATH = "./policyNet.pt"
 
+torch.manual_seed(42)
+
 class PolicyNet(nn.Module):
     def __init__(self):
         super(PolicyNet, self).__init__()
@@ -26,4 +28,4 @@ class PolicyNet(nn.Module):
 policyNet = PolicyNet()
 
 torch.save(policyNet, PATH)
-print("not trained model generated.")
+print("non trained model generated.")
