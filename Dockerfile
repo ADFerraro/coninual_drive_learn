@@ -1,7 +1,5 @@
 FROM adferraro/continual_drive:latest
 
-WORKDIR /src
+WORKDIR /
 
-COPY ./continual .
-
-CMD ["python3", "main.py"]
+RUN rm -r /src
