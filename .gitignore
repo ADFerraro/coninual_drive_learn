@@ -5,3 +5,5 @@ dummy/.virtual_documents/
 
 # files to be ignored
 .DS_Store
+continual/input.pt
+continual/label.pt

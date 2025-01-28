@@ -2,6 +2,11 @@ import os
 import subprocess
 
 os.system("python3 generate_empty.py")
+if os.path.isfile('input.pt'):
+    os.remove('input.pt')
+if os.path.isfile('label.pt'):
+    os.remove('label.pt')
+
 try:
     p=subprocess.Popen(['python3', 'simulator.py'])
 except subprocess.CalledProcessError as e:
@@ -9,7 +14,6 @@ except subprocess.CalledProcessError as e:
 
 try:
     while True:
-        #os.system("python3 continual.py")
         p1=subprocess.run(['python3', 'continual.py'], check=True)
 except KeyboardInterrupt:
     p.kill()
