@@ -2,7 +2,8 @@ import os
 import subprocess
 import argparse
 
-repository_path = '~/Desktop/Tesi/code/continual_drive_learn/'
+#repository_path = '~/Desktop/Tesi/code/continual_drive_learn/'
+repository_path = '../'
 
 parser = argparse.ArgumentParser(description="Pull git repository and docker image")
 parser.add_argument(
@@ -36,7 +37,7 @@ docker_pull()
 if args.run:
     try:
 #        p = subprocess.run(['docker', 'run','--name','testcontainer', '-it', 'adferraro/continual_drive'], shell=True)
-        p = subprocess.run(["docker run --name testcontainer -it adferraro/continual_drive"], shell=True)
+        p = subprocess.run(["docker run --rm -v $(pwd | rev | cut -d '/' -f 2- | rev):/mnt/repo --name testcontainer -it adferraro/continual_drive /bin/sh"], shell=True)
     except subprocess.CalledProcessError as e:
         print(f'Error running container: {e}')
     except KeyboardInterrupt:
