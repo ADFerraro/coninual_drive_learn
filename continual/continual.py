@@ -36,7 +36,6 @@ model = torch.load('./policyNet.pt', weights_only=False)
 criterion = nn.MSELoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=0.001)
 n_times = 0
-out = model(img)
 last = None
 while os.stat('input.pt').st_mtime == last_mod:
     out = model(img)
