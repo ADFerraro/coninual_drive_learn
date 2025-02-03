@@ -37,7 +37,7 @@ docker_pull()
 if args.run:
     try:
 #        p = subprocess.run(['docker', 'run','--name','testcontainer', '-it', 'adferraro/continual_drive'], shell=True)
-        p = subprocess.run(["docker run --rm -v $(pwd | rev | cut -d '/' -f 2- | rev):/mnt/repo --name testcontainer -it adferraro/continual_drive /bin/sh"], shell=True)
+        p = subprocess.run(["docker run --rm -v $(pwd | rev | cut -d '/' -f 2- | rev):/mnt/repo -v S(pwd | rev | cut -d '/' -f 3- | rev)/images:/mnt/images --name testcontainer -it adferraro/continual_drive /bin/sh"], shell=True)
     except subprocess.CalledProcessError as e:
         print(f'Error running container: {e}')
     except KeyboardInterrupt:
