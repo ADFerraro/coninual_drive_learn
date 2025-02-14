@@ -22,7 +22,7 @@ def on_w():
 def on_s():
     global brake
     #if(brake <= 100):
-    brake += 1
+    brake += 0.5
     if(brake > 100): brake=100
 
 def on_w_release():
@@ -50,7 +50,7 @@ os.mkdir(os.path.abspath(f"..\..\images"))
 
 while True:
     if(not keyboard.is_pressed('w')):
-        acc -= 5
+        acc -= 15
         if(acc < 0):
             acc = 0
     if(not keyboard.is_pressed('s')):
